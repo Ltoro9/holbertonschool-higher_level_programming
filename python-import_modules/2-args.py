@@ -4,7 +4,7 @@ if __name__ == "__main__":
 argc = len(sys.argv)
 count = 1
 if argc == 1:
-    print("0 arguments.")
+    print("{} arguments.".format(argc - 1))
 elif argc == 2:
     print("{} argument:".format(count))
     print("{}: {}".format(count, str(sys.argv[count])))
