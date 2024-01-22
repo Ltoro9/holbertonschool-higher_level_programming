@@ -6,7 +6,7 @@ count = 1
 if argc == 1:
     print("0 arguments.")
 elif argc == 2:
-    print("1 argument:")
+    print("{} argument:".format(count))
     print("{}: {}".format(count, str(sys.argv[count])))
 else:
     print("{} arguments:".format(argc - 1))
