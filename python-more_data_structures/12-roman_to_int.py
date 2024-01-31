@@ -1,14 +1,25 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    roman_numbers = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 
-                     'C': 100, 'D': 500, 'M': 1000}
+    total = 0
     prev_value = 0
-    if not roman_string:
-        return 0
-    for i in roman_string:
-        value = roman_numbers[i]
-        if value > prev_value:
-            prev_value = value - prev_value
+    roman_dictionary = {
+         'M': 1000,
+         'D': 500,
+         'C': 100,
+         'L': 50,
+         'X': 10,
+         'V': 5,
+         'I': 1
+         }
+    if not isinstance(roman_string, str):
+        return total
+    for letter in roman_string:
+        value = roman_dictionary.get(letter, 0)
+        if value == 0:
+            return 0
+        if 0 < prev_value < value:
+            total += value - prev_value*2
         else:
-            prev_value += value
-    return prev_value
+            prev_value = value
+            total += value
+    return total
