@@ -9,6 +9,9 @@ Author: Alfre, Antonio, Louis, Date: Feb 01 2024
 def print_square(size):
     """Description: prints a square with the character #
     - size is the size length of the square"""
+    err = "unsupported operand type(s) for +: 'NoneType' and 'int'"
+    if size is None:
+        raise TypeError(err)
     if type(size) is not int:
         raise TypeError("size must be an integer")
     if size < 0:
