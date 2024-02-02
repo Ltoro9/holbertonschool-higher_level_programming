@@ -61,3 +61,8 @@ text_indentation() missing 1 required positional argument: 'text'
 ... except Exception as e:
 ...     print(e)
 text must be a string
+>>> try:
+...     text_indentation({a: 1, b: 2, c: 3})
+... except Exception as e:
+...     print(e)
+name 'a' is not defined
