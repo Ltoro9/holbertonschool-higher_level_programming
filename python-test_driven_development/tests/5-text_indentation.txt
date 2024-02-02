@@ -75,3 +75,8 @@ text must be a string
 ... except Exception as e:
 ...     print(e)
 name 'a' is not defined
+>>> try:
+...     text_indentation("")
+... except Exception as e:
+...     print(e)
+Text is empty

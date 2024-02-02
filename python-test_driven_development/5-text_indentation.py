@@ -12,6 +12,8 @@ def text_indentation(text):
         raise TypeError(err)
     if type(text) is not str:
         raise TypeError("text must be a string")
+    if not text:
+        raise TypeError("Text is empty")
     c = 0
     while c < len(text):
         print(text[c], end='')
