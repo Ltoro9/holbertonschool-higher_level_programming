@@ -9,7 +9,6 @@ Author: Alfre, Antonio, Louis, Date: Feb 01 2024
 def print_square(size):
     """Description: prints a square with the character #
     - size is the size length of the square"""
-    
     if type(size) is not int:
         raise TypeError("size must be an integer")
     if size < 0:
