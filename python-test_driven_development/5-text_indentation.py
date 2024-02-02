@@ -4,9 +4,12 @@ Module Name: 5-text_indentation.py
 Description: prints a text with 2 new lines after each'., ? and :'
 Author: Alfre, Antonio, Louis, Date: Feb 01 2024
 """
+
+
 def text_indentation(text):
     """Description: prints a text with 2 new lines after each'., ? and :'
-    - text is a string"""
+    - text: is a string
+    - c: is int"""
     err = "text_indentation() missing 1 required positional argument: 'text'"
     if text is None:
         raise TypeError(err)
