@@ -5,8 +5,6 @@
 class Rectangle:
     """comment"""
 
-    total = 0
-
     def __init__(self, width=0, height=0):
         if type(width) is not int:
             raise TypeError("width must be an integer")
@@ -18,7 +16,6 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = height
         self.__width = width
-        Rectangle.total += 1
 
     @property
     def width(self):
@@ -66,4 +63,3 @@ class Rectangle:
 
     def __del__(self):
         print("Bye rectangle...")
-        Rectangle.total -= 1
