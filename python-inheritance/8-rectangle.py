@@ -15,6 +15,7 @@ class BaseGeometry:
             raise ValueError(f"{name} must be greater than 0")
 
 class Rectangle(BaseGeometry):
+    """comment"""
     def __init__(self, width, height):
         self.__height = height
         self.__width = width
