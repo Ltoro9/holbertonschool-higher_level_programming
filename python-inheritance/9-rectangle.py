@@ -14,6 +14,7 @@ class BaseGeometry:
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
 
+
 class Rectangle(BaseGeometry):
     """comment"""
 
@@ -21,7 +22,7 @@ class Rectangle(BaseGeometry):
         self.__height = height
         self.__width = width
         self.integer_validator("width", width)
-        self.integer_validator("height",height)
+        self.integer_validator("height", height)
 
     def area(self):
         return self.__height * self.__width
