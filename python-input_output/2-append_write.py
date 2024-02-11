@@ -2,7 +2,7 @@
 """comment"""
 
 
-def write_file(filename="", text=""):
+def append_write(filename="", text=""):
     """comment"""
 
     with open(filename, "a", encoding="utf-8") as file:
