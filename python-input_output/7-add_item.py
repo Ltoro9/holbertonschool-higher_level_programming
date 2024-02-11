@@ -10,6 +10,7 @@ load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
 def add_item(args):
     """comment"""
 
+    args = sys.argv[1:]
     my_list = []
 
     try:
