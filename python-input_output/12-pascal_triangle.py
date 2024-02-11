@@ -3,18 +3,15 @@
 
 
 def pascal_triangle(n):
-    """comment"""
     if n <= 0:
         return []
 
-    triangle = pascal_triangle(n - 1)
-    last_row = triangle[-1]
-    new_row = [1]
-
-    for i in range(len(last_row) - 1):
-        new_row.append(last_row[i] + last_row[i + 1])
-
-    new_row.append(1)
-    triangle.append(new_row)
+    triangle = []
+    for i in range(n):
+        row = [1] * (i + 1)
+        if i >= 2:
+            for j in range(1, i):
+                row[j] = triangle[i - 1][j - 1] + triangle[i - 1][j]
+        triangle.append(row)
 
     return triangle
