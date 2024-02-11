@@ -33,6 +33,17 @@ class Rectangle:
             raise ValueError("width must be >= 0")
         self.__width = value
 
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        if rect_1 is not Rectangle:
+            TypeError("rect_1 must be an instance of Rectangle")
+        if rect_2 is not Rectangle:
+            TypeError("rect_2 must be an instance of Rectangle")
+        if rect_1.area() >= rect_2.area():
+            return rect_1
+        else:
+            return rect_2
+    
     @property
     def height(self):
         return self.__height
@@ -69,15 +80,6 @@ class Rectangle:
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
 
-    def bigger_or_equal(rect_1, rect_2):
-        if rect_1 is not Rectangle:
-            TypeError("rect_1 must be an instance of Rectangle")
-        if rect_2 is not Rectangle:
-            TypeError("rect_2 must be an instance of Rectangle")
-        if rect_1.area() >= rect_2.area():
-            return rect_1
-        else:
-            return rect_2
 
     def square(cls, size=0):
         return cls(size, size)
