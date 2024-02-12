@@ -26,15 +26,6 @@ class Rectangle(Base):
         self.__x = x
         self.__y = y
 
-    """
-        def validator(self, name, value):
-            if not isinstance(value, int):
-                raise TypeError(f"{name} must be an integer")
-            if name == "width" or name == "height":
-                if value <= 0:
-                    raise ValueError(f"{name} must be > 0")
-    """
-
     @property
     def width(self):
         return self.__width
