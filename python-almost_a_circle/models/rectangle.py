@@ -99,6 +99,7 @@ class Rectangle(Base):
         return f"[Rectangle] ({self.id}) {x}/{y} - {w}/{h}"
 
     def update(self, *args):
+        """comment"""
         if len(args) == 1:
             self.id = args[0]
         if len(args) == 2:
