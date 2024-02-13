@@ -30,8 +30,6 @@ class Rectangle(Base):
         self.__x = x
         self.__y = y
 
-    def area(self):
-        return self.__height * self.__width
 
     @property
     def width(self):
@@ -56,6 +54,9 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("height must be > 0")
         self.__height = value
+
+    def area(self):
+        return self.__height * self.__width
 
     @property
     def x(self):
