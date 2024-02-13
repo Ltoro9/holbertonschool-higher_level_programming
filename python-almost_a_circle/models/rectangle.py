@@ -81,3 +81,8 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def display(self):
+        """comment"""
+        for row in range(self.__height):
+            print("#" * self.__width)
