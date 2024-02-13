@@ -30,7 +30,6 @@ class Rectangle(Base):
         self.__x = x
         self.__y = y
 
-
     @property
     def width(self):
         return self.__width
@@ -56,6 +55,7 @@ class Rectangle(Base):
         self.__height = value
 
     def area(self):
+        """comment"""
         return self.__height * self.__width
 
     @property
