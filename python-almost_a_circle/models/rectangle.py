@@ -84,7 +84,10 @@ class Rectangle(Base):
 
     def display(self):
         """comment"""
+        for _ in range(self.__y):
+            print()
         for row in range(self.__height):
+            print(" " * self.__x, end="")
             print("#" * self.__width)
 
     def __str__(self):
