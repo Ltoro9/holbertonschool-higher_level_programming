@@ -86,3 +86,11 @@ class Rectangle(Base):
         """comment"""
         for row in range(self.__height):
             print("#" * self.__width)
+
+    def __str__(self):
+        """comment"""
+        x = self.__x
+        y = self.__y
+        w = self.__width
+        h = self.__height
+        return f"[Rectangle] ({self.id}) {x}/{y} - {w}/{h}"
