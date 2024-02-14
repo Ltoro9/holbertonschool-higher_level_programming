@@ -34,7 +34,7 @@ class Base:
         if list_objs is None:
             list_objs = []
 
-        filename = str(cls.__name__) + ".json"
+        filename = f"{cls.__name__}.json"
         json_list = [obj.to_dictionary() for obj in list_objs]
         json_str = cls.to_json_string(json_list)
         with open(filename, "w") as file:
@@ -57,3 +57,13 @@ class Base:
             dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """comment"""
+        filename = f"{cls.__name__}.json"
+        with open(filename, "r") as file:
+            data = file.read()
+            if not data:
+                return []
+            return [cls.from_json_string(obj) for obj in json.loads(data)]
