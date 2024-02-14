@@ -68,7 +68,10 @@ class Base:
                 data = file.read()
                 if data:
                     json_list = cls.from_json_string(data)
-                    obj = [cls.create(**dictionary) for dictionary in json_list]
+                    obj = [
+                        cls.create(**dictionary)
+                        for dictionary in json_list
+                    ]
                     return obj
         except FileNotFoundError:
             return []
