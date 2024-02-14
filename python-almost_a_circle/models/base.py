@@ -33,6 +33,7 @@ class Base:
         """comment"""
         if list_objs is None:
             file.write = "[]"
+
         filename = str(cls.__name__) + ".json"
         json_list = [obj.to_dictionary() for obj in list_objs]
         json_str = cls.to_json_string(json_list)
