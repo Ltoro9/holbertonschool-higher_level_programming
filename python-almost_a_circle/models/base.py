@@ -50,6 +50,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """comment"""
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1)
         if cls.__name__ == "Square":
