@@ -39,3 +39,11 @@ class Base:
         json_str = cls.to_json_string(json_list)
         with open(filename, "w") as file:
             file.write(json_str)
+
+    @staticmethod
+    def from_json_string(json_string):
+        a_list = []
+        if json_string is None:
+            return a_list
+        else:
+            return json.loads(json_string)
