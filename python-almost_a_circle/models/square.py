@@ -12,7 +12,7 @@ class Square(Rectangle):
 
     @property
     def size(self):
-        return self.height
+        return self.width
 
     @size.setter
     def size(self, value):
@@ -21,3 +21,13 @@ class Square(Rectangle):
 
     def __str__(self):
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.size}"
+
+    def update(self, *args, **kwargs):
+        """comment"""
+        my_list = ["id", "size", "x", "y"]
+        if args:
+            for name, value in zip(my_list, args):
+                setattr(self, name, value)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
