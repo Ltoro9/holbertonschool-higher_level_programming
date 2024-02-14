@@ -32,7 +32,7 @@ class Base:
     def save_to_file(cls, list_objs):
         """comment"""
         if list_objs is None:
-            file.write = "[]"
+            list_objs = []
 
         filename = str(cls.__name__) + ".json"
         json_list = [obj.to_dictionary() for obj in list_objs]
