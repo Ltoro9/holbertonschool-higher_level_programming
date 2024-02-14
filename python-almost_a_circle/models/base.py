@@ -62,14 +62,13 @@ class Base:
     def load_from_file(cls):
         """comment"""
         filename = f"{cls.__name__}.json"
-        if not filename:
+        try:
+            obj = []
+            with open(filename, "r") as file:
+                data = file.read()
+                if data:
+                    json_list = cls.from_json_string(data)
+                    obj = [cls.create(**dictionary) for dictionary in json_list]
+                    return obj
+        except FileNotFoundError:
             return []
-        with open(filename, "r") as file:
-            data = file.read()
-            if not data:
-                return []
-            else:
-                return [
-                    cls.from_json_string(json.dumps(obj))
-                    for obj in json.loads(data)
-                ]
