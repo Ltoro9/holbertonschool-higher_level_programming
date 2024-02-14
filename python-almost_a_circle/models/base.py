@@ -67,4 +67,3 @@ class Base:
             if not data:
                 return []
             return [cls.from_json_string(obj) for obj in json.loads(data)]
-        
