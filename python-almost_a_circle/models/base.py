@@ -2,6 +2,9 @@
 """comment"""
 
 
+import json
+
+
 class Base:
     """comment"""
 
@@ -13,3 +16,13 @@ class Base:
             self.id = Base.__nb_objects
         else:
             self.id = id
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        if list_dictionaries is None:
+            return "[]"
+        else:
+            return json.dumps(list_dictionaries)
+        
+    def __repr__(self):
+        return str(self.to_json_string())
