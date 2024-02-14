@@ -24,6 +24,6 @@ class Base:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
-        
+
     def __repr__(self):
         return str(self.to_json_string())
