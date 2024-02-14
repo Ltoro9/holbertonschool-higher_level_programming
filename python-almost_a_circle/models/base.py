@@ -19,6 +19,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """comment"""
         if list_dictionaries is None:
             return "[]"
         else:
