@@ -16,5 +16,9 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle("1", 2)
 
+    def test_rectangle_string_height(self):
+        with self.assertRaises(TypeError):
+            Rectangle(1, "2")
+
 if __name__ == '__main__':
     unittest.main()
