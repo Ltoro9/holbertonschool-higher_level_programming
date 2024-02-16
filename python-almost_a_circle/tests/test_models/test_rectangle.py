@@ -47,7 +47,8 @@ class TestRectangle(unittest.TestCase):
             r2 = Rectangle(1, 0)
 
     def test_area_method_exists(self):
-        self.assertTrue(hasattr(Rectangle, 'area'))
+        r1 = Rectangle(5, 10)
+        self.assertEqual(r1.area(), 50)
 
 if __name__ == '__main__':
     unittest.main()
