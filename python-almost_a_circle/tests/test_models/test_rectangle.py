@@ -4,8 +4,12 @@
 
 import unittest
 from models.rectangle import Rectangle
+from models.base import Base
 
 class TestRectangle(unittest.TestCase):
+
+    def setUp(self):
+        Base._Base__nb_objects = 0
 
     def test_rectangle_creation(self):
         r = Rectangle(1, 2)
@@ -49,6 +53,10 @@ class TestRectangle(unittest.TestCase):
     def test_area_method_exists(self):
         r1 = Rectangle(5, 10)
         self.assertEqual(r1.area(), 50)
+
+    def test_str_method_exist(self):
+        r1 = Rectangle(1, 2, 3, 4)
+        self.assertEqual(r1.__str__(), '[Rectangle] (1) 3/4 - 1/2')
 
 if __name__ == '__main__':
     unittest.main()
