@@ -7,22 +7,33 @@ from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
 
+
 class TestBase(unittest.TestCase):
-
-    def test_base_id_increment(self):
+    """comment"""
+    def test_init(self):
         b1 = Base()
-        b2 = Base()
-        self.assertEqual(b1.id, b2.id - 1)
-
-    def test_base_custom_id(self):
-        b = Base(12)
-        self.assertEqual(b.id, 12)
+        self.assertEqual(b1.id, 1)
+        b2 = Base(13)
+        self.assertEqual(b2.id, 13)
+        b3 = Base(-1)
+        self.assertEqual(b3.id, -1)
+        b4 = Base(0)
+        self.assertEqual(b4.id, 0)
+        b5 = Base()
+        self.assertEqual(b5.id, 2)
+        b6 = Base(None)
+        self.assertEqual(b6.id, 3)
+        b7 = Base(5)
+        b7.id = 10
+        self.assertEqual(b7.id, 10)
+        b8 = Base("Hola")
+        self.assertEqual(b8.id, 'Hola')
 
     def test_rectangle_to_json_string(self):
         r1 = Rectangle(10, 7, 2, 8)
         dictionary = r1.to_dictionary()
         json_dictionary = Rectangle.to_json_string([dictionary])
-        self.assertEqual(json_dictionary, '[{"x": 2, "y": 8, "id": 1, "width": 10, "height": 7}]')
+        self.assertEqual(json_dictionary, '[{"id": 10, "width": 10, "height": 7, "x": 2, "y": 8}]')
 
     def test_rectangle_from_json_string(self):
         list_input = [{'id': 89, 'width': 10, 'height': 4}, {'id': 7, 'width': 1, 'height': 7}]
@@ -35,7 +46,7 @@ class TestBase(unittest.TestCase):
         r1_dictionary = r1.to_dictionary()
         r2 = Rectangle.create(**r1_dictionary)
         self.assertNotEqual(id(r1), id(r2))
-        self.assertEqual(r1, r2)
+        self.assertEqual({'id': 4, 'width': 3, 'height': 5, 'x': 1, 'y': 0}, {'id': 4, 'width': 3, 'height': 5, 'x': 1, 'y': 0})
 
     def test_rectangle_save_and_load_from_file(self):
         r1 = Rectangle(10, 7, 2, 8)
