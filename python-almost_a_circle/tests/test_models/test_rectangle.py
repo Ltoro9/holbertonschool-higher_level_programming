@@ -12,19 +12,13 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r.width, 1)
         self.assertEqual(r.height, 2)
 
-    def test_rectangle_string_width(self):
+    def test_rectangle_string(self):
         with self.assertRaises(TypeError):
             Rectangle("1", 2)
-
-    def test_rectangle_string_height(self):
         with self.assertRaises(TypeError):
             Rectangle(1, "2")
-
-    def test_rectangle_string_x(self):
         with self.assertRaises(TypeError):
             Rectangle(1, 2, "3")
-
-    def test_rectangle_string_y(self):
         with self.assertRaises(TypeError):
             Rectangle(1, 2, 3, "4")
 
@@ -35,6 +29,22 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r.x, 3)
         self.assertEqual(r.y, 4)
         self.assertEqual(r.id, 5)
+
+    def test_rectangle_negative_numbers(self):
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(-1, 2)
+        with self.assertRaises(ValueError):
+            r2 = Rectangle(1, -2)
+        with self.assertRaises(ValueError):
+            r3 = Rectangle(1, 2, -3)
+        with self.assertRaises(ValueError):
+            r4 = Rectangle(1, 2, 3, -4)
+
+    def test_rectangle_zero_values(self):
+        with self.assertRaises(ValueError):
+            r1 = Rectangle(0, 2)
+        with self.assertRaises(ValueError):
+            r2 = Rectangle(1, 0)
 
 if __name__ == '__main__':
     unittest.main()
