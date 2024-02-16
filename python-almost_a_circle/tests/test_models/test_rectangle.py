@@ -12,5 +12,9 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r.width, 1)
         self.assertEqual(r.height, 2)
 
+    def test_rectangle_string_width(self):
+        with self.assertRaises(TypeError):
+            Rectangle("1", 2)
+
 if __name__ == '__main__':
     unittest.main()
