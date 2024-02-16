@@ -46,5 +46,8 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             r2 = Rectangle(1, 0)
 
+    def test_area_method_exist(self):
+        self.assertTrue(Rectangle, 'area')
+
 if __name__ == '__main__':
     unittest.main()
