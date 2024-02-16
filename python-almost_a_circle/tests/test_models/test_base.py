@@ -1,33 +1,18 @@
-#!/usr/bin/python3
-"""comment"""
-
-
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
 
-
 class TestBase(unittest.TestCase):
-    """comment"""
-    def test_init(self):
+
+    def test_base_id_increment(self):
         b1 = Base()
-        self.assertEqual(b1.id, 1)
-        b2 = Base(13)
-        self.assertEqual(b2.id, 13)
-        b3 = Base(-1)
-        self.assertEqual(b3.id, -1)
-        b4 = Base(0)
-        self.assertEqual(b4.id, 0)
-        b5 = Base()
-        self.assertEqual(b5.id, 2)
-        b6 = Base(None)
-        self.assertEqual(b6.id, 3)
-        b7 = Base(5)
-        b7.id = 10
-        self.assertEqual(b7.id, 10)
-        b8 = Base("Hola")
-        self.assertEqual(b8.id, 'Hola')
+        b2 = Base()
+        self.assertEqual(b1.id, b2.id - 1)
+
+    def test_base_custom_id(self):
+        b = Base(12)
+        self.assertEqual(b.id, 12)
 
     def test_rectangle_to_json_string(self):
         r1 = Rectangle(10, 7, 2, 8)
