@@ -15,7 +15,6 @@ class TestRectangle(unittest.TestCase):
     def test_rectangle_string_width(self):
         with self.assertRaises(TypeError):
             Rectangle("1", 2)
-            Rectangle(1, "2")
 
 if __name__ == '__main__':
     unittest.main()
