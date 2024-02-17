@@ -17,11 +17,23 @@ class TestSquare(unittest.TestCase):
 
     def test_square_string(self):
         with self.assertRaises(TypeError):
-            Square("5")
+            Square("1")
+        with self.assertRaises(TypeError):
+            Square(1, "2")
+        with self.assertRaises(TypeError):
+            Square(1, 2, "3")
 
     def test_square_negative_numbers(self):
         with self.assertRaises(ValueError):
-            s1 = Square(-5)
+            s1 = Square(-1)
+        with self.assertRaises(ValueError):
+            s2 = Square(1, -2)
+        with self.assertRaises(ValueError):
+            s3 = Square(1, 2, -3)
+
+    def test_square_zero_value(self):
+        with self.assertRaises(ValueError):
+            s1 = Square(0)
 
     def test_square_area_method_exists(self):
         s1 = Square(5)
