@@ -5,6 +5,7 @@
 import unittest
 from models.square import Square
 from models.base import Base
+from models.rectangle import Rectangle
 
 class TestSquare(unittest.TestCase):
 
@@ -50,6 +51,11 @@ class TestSquare(unittest.TestCase):
     def test_str_method_exist(self):
         s1 = Square(1, 2, 3)
         self.assertEqual(s1.__str__(), '[Square] (1) 2/3 - 1')
+
+    def test_display_method_square(self):
+        size = 2
+        square_print = None
+        self.assertEqual(Square(size).display(), square_print)
 
 if __name__ == '__main__':
     unittest.main()
