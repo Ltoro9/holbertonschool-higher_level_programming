@@ -5,6 +5,7 @@
 import unittest
 from models.rectangle import Rectangle
 from models.base import Base
+import os
 
 class TestRectangle(unittest.TestCase):
 
@@ -57,6 +58,10 @@ class TestRectangle(unittest.TestCase):
     def test_str_method_exist(self):
         r1 = Rectangle(1, 2, 3, 4)
         self.assertEqual(r1.__str__(), '[Rectangle] (1) 3/4 - 1/2')
+
+    def test_save_to_file_None(self):
+        Rectangle.save_to_file(None)
+        self.assertTrue(os.path.exists("Square.json"))
 
 if __name__ == '__main__':
     unittest.main()
