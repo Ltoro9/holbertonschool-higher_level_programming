@@ -11,6 +11,8 @@ from models.square import Square
 class TestBase(unittest.TestCase):
     """comment"""
     def test_init(self):
+        b  = Base(1)
+        self.assertEqual(b.id, 1)
         b1 = Base()
         self.assertEqual(b1.id, 1)
         b2 = Base(13)
@@ -29,11 +31,15 @@ class TestBase(unittest.TestCase):
         b8 = Base("Hola")
         self.assertEqual(b8.id, 'Hola')
 
-    def test_rectangle_to_json_string(self):
-        r1 = Rectangle(10, 7, 2, 8)
-        dictionary = r1.to_dictionary()
-        json_dictionary = Rectangle.to_json_string([dictionary])
-        self.assertEqual(json_dictionary, '[{"id": 10, "width": 10, "height": 7, "x": 2, "y": 8}]')
+    def test_to_json_string(self):
+        r = Rectangle(10, 7, 2, 8)
+        r_dict = r.to_dictionary()
+        json_dictionary = Rectangle.to_json_string([r_dict])
+        self.assertEqual(json_dictionary, '[{"id": 14, "width": 10, "height": 7, "x": 2, "y": 8}]')
+        s = Square(5, 1, 2)
+        s_dict = s.to_dictionary()
+        json_dictionary = Square.to_json_string([s_dict])
+        self.assertEqual(json_dictionary, '[{"id": 15, "size": 5, "x": 1, "y": 2}]')
 
     def test_rectangle_from_json_string(self):
         list_input = [{'id': 89, 'width': 10, 'height': 4}, {'id': 7, 'width': 1, 'height': 7}]
