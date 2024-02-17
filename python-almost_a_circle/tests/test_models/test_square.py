@@ -14,15 +14,13 @@ class TestSquare(unittest.TestCase):
     def test_Square_creation(self):
         s = Square(5)
         self.assertEqual(s.size, 5)
-        s = Square(10, 1, 2)
-        self.assertEqual(s.size, 10)
-        self.assertEqual(s.x, 1)
-        self.assertEqual(s.y, 2)
         s = Square(5, 1, 2, 3)
         self.assertEqual(s.size, 5)
         self.assertEqual(s.x, 1)
         self.assertEqual(s.y, 2)
         self.assertEqual(s.id, 3)
+        with self.assertRaises(ValueError):
+            Square(1, 2)
 
     def test_square_string(self):
         with self.assertRaises(TypeError):
