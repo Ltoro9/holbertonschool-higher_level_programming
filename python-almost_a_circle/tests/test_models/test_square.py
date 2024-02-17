@@ -6,6 +6,7 @@ import unittest
 from models.square import Square
 from models.base import Base
 from models.rectangle import Rectangle
+import os
 
 class TestSquare(unittest.TestCase):
 
@@ -52,10 +53,9 @@ class TestSquare(unittest.TestCase):
         s1 = Square(1, 2, 3)
         self.assertEqual(s1.__str__(), '[Square] (1) 2/3 - 1')
 
-    def test_display_method_square(self):
-        size = 2
-        square_print = None
-        self.assertEqual(Square(size).display(), square_print)
+    def test_save_to_file_None(self):
+        Square.save_to_file(None)
+        self.assertTrue(os.path.exists("Square.json"))
 
 if __name__ == '__main__':
     unittest.main()
