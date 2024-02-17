@@ -61,7 +61,7 @@ class TestRectangle(unittest.TestCase):
 
     def test_save_to_file_None(self):
         Rectangle.save_to_file(None)
-        self.assertTrue(os.path.exists("Square.json"))
+        self.assertTrue(os.path.exists("Rectangle.json"))
 
 if __name__ == '__main__':
     unittest.main()
