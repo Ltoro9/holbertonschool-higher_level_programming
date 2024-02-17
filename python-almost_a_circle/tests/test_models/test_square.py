@@ -19,8 +19,6 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(s.x, 1)
         self.assertEqual(s.y, 2)
         self.assertEqual(s.id, 3)
-        with self.assertRaises(ValueError):
-            Square(1, 2)
 
     def test_square_string(self):
         with self.assertRaises(TypeError):
