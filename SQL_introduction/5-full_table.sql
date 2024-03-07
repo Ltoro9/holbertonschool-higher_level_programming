@@ -1,3 +1,2 @@
--- script that lists all rows of the table first_table
-SELECT *
-FROM first_table;
+-- script that prints the following description of the table first_table
+SHOW CREATE TABLE first_table;
