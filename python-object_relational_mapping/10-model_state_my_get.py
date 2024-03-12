@@ -25,6 +25,8 @@ if __name__ == "__main__":
 
     rows = session.query(State).order_by(State.id)\
         .where(collate(State.name, 'utf8mb4_bin') == state_name).all()
+    # COLLATION 'binary' is not compatible with my MySQL configuration
+    # collate() function with COLLATE utf8mb4_bin to perform a case-sensitive search
 
     if rows:
         for row in rows:
