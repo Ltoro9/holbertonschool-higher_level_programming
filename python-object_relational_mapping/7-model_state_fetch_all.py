@@ -10,19 +10,21 @@ from sqlalchemy.orm import sessionmaker
 from model_state import State
 
 
-username = sys.argv[1]
-passwd = sys.argv[2]
-database = sys.argv[3]
+if __name__ == "__main__":
 
-db_url = (f"mysql+mysqldb://{username}:{passwd}@localhost:3306/{database}")
-engine = create_engine(db_url)
+    username = sys.argv[1]
+    passwd = sys.argv[2]
+    database = sys.argv[3]
 
-session = sessionmaker(bind=engine)
-session = session()
+    db_url = (f"mysql+mysqldb://{username}:{passwd}@localhost:3306/{database}")
+    engine = create_engine(db_url)
 
-rows = session.query(State).order_by(State.id).all()
+    session = sessionmaker(bind=engine)
+    session = session()
 
-for row in rows:
-    print(f"{row.id}: {row.name}")
+    rows = session.query(State).order_by(State.id).all()
 
-session.close()
+    for row in rows:
+        print(f"{row.id}: {row.name}")
+
+    session.close()
