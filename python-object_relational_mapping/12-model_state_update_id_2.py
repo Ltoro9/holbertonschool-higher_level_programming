@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
     session.query(State).where(State.id == 2)\
         .update({State.name: "New Mexico"})
-    
+
     session.commit()
 
     session.close()
