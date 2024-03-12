@@ -22,7 +22,7 @@ if __name__ == "__main__":
     session = sessionmaker(bind=engine)
     session = session()
 
-    rows = session.query(State).where(State.id == 2)\
+    session.query(State).where(State.id == 2)\
         .update({State.name: "New Mexico"})
 
     session.close()
