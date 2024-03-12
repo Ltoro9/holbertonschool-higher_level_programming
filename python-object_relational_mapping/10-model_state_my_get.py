@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    script that lists all State objects that contain the letter 'a'
+    script that lists all State objects with the name passed as argument
 """
 
 
