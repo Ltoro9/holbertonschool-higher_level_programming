@@ -7,6 +7,7 @@
 import sys
 import MySQLdb
 
+
 if __name__ == "__main__":
     
     db = MySQLdb.connect(
@@ -30,9 +31,3 @@ if __name__ == "__main__":
 
     cursor.close()
     db.close()
-
-
-
-
-
-
