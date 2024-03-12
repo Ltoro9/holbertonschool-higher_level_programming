@@ -24,6 +24,9 @@ if __name__ == "__main__":
 
     rows = session.query(State).order_by(State.id).first()
 
-    print(f"{rows.id}: {rows.name}")
+    if rows:
+        print(f"{rows.id}: {rows.name}")
+    else:
+        print("Nothing")
 
     session.close()
