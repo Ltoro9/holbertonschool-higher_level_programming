@@ -10,6 +10,7 @@ from sqlalchemy import Integer, Column, String
 
 Base = declarative_base()
 
+
 class State(Base):
     """
         Represents a state entity in the database.
