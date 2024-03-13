@@ -10,6 +10,10 @@ from sqlalchemy import Integer, Column, String, ForeignKey
 
 class City(Base):
 
+    """
+        Class for table cities
+    """
+
     __tablename__ = "cities"
 
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
